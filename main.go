@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	err := godotenv.Load(".env")
+	err := godotenv.Load("env.local")
 	if err != nil {
 		log.Fatalf("Some error occured. Err: %s", err)
 	}
