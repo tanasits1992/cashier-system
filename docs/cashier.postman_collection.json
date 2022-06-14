@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "4adb282f-46c4-4bb7-83f6-c678d88cfb0a",
+		"name": "q chang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "exercise 1",
+			"item": [
+				{
+					"name": "Find data set API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/series?positions=2&positions=5&positions=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"series"
+							],
+							"query": [
+								{
+									"key": "positions",
+									"value": "2"
+								},
+								{
+									"key": "positions",
+									"value": "5"
+								},
+								{
+									"key": "positions",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exercise 2",
+			"item": [
+				{
+					"name": "voucher",
+					"item": [
+						{
+							"name": "List all voucher",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/voucher",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"voucher"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Voucher",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ส่วนลด 3,000 บาท\",\n    \"discount\": 3000,\n    \"start\": \"2022-01-01T00:00:00+07:00\",\n    \"end\": \"2023-12-12T23:59:59+07:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/voucher",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"voucher"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get voucher by barcode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/voucher/7b55169a-71f1-4aa9-a9c6-77b4d0e5b767",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"voucher",
+										"7b55169a-71f1-4aa9-a9c6-77b4d0e5b767"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validate voucher",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/voucher/validate/7b55169a-71f1-4aa9-a9c6-77b4d0e5b767",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"voucher",
+										"validate",
+										"7b55169a-71f1-4aa9-a9c6-77b4d0e5b767"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Inactive voucher",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/voucher/7b55169a-71f1-4aa9-a9c6-77b4d0e5b767",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"voucher",
+										"7b55169a-71f1-4aa9-a9c6-77b4d0e5b767"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "cash",
+					"item": [
+						{
+							"name": "Get cash store",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cash/store",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cash",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update cash store",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"cashUnit\": 100,\n        \"amount\": 3\n    },\n    {\n        \"cashUnit\": 0.50,\n        \"amount\": 5\n    },\n    {\n        \"cashUnit\": 20,\n        \"amount\": 2\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cash/store",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cash",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pay",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"paymentType\": \"CASH\",\n    \"productItems\": [\n        {\n            \"barcode\": \"001\",\n            \"productName\": \"A01\",\n            \"isVat\": true,\n            \"unitName\": \"ชิ้น\",\n            \"pricePerUnit\": 1000,\n            \"amount\": 10\n        },\n        {\n            \"barcode\": \"002\",\n            \"productName\": \"A02\",\n            \"isVat\": false,\n            \"unitName\": \"ลัง\",\n            \"pricePerUnit\": 1000,\n            \"amount\": 10\n        }\n    ],\n    \"discountItems\": [\n        {\n            \"type\": \"VOUCHER\",\n            \"code\": \"7b55169a-71f1-4aa9-a9c6-77b4d0e5b767\"\n        }\n    ],\n    \"receiveDetails\": [\n        {\n            \"cashUnit\": 1000,\n            \"amount\": 10\n        },\n        {\n            \"cashUnit\": 500,\n            \"amount\": 15\n        },\n        {\n            \"cashUnit\": 100,\n            \"amount\": 11\n        },\n        {\n            \"cashUnit\": 50,\n            \"amount\": 15\n        },\n        {\n            \"cashUnit\": 20,\n            \"amount\": 23\n        },\n        {\n            \"cashUnit\": 10,\n            \"amount\": 9\n        }\n    ]\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cash/pay",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cash",
+										"pay"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sale transaction",
+					"item": [
+						{
+							"name": "Get sale transaction by bill no",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/sale-transaction?billNo=82a910ff-04c1-42c5-b4d6-02f8d9b320b1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"sale-transaction"
+									],
+									"query": [
+										{
+											"key": "billNo",
+											"value": "82a910ff-04c1-42c5-b4d6-02f8d9b320b1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
